@@ -1,8 +1,7 @@
 // const express = require("express");
 // const path = require("path");
 // const fs = require("fs");
-// const util = require("util");
-// const { stringify } = require("querystring");
+// const util = require("util");  
 
 // const readFileAsync = util.promisify(fs.readFile);
 // const writeFileAsync = util.promisify(fs.writeFile);
@@ -69,3 +68,129 @@
 // app.listen(PORT, () => {
 //   console.log("App listening on PORT " + PORT);
 // });
+
+
+
+
+
+// const fs = require("fs");
+// const uuid = require("uuid");
+
+
+// app.get("/api/notes", (req, res) => {
+//   console.log("GET request for notes.");
+// });
+
+// app.post("/api/notes", (req, res) => {
+//   console.log("POST request for new note.");
+// });
+
+// app.delete("/api/notes", (req, res) => {
+//   console.log("DELETE request to delete note.");
+// });
+
+// // ROUTING (move to routing folder)
+// app.get("/notes", (req, res) => {
+//   res.sendFile(path.join(__dirname, "./public/pages/notes.html"));
+// });
+
+// app.get("/", (req, res) => {
+//   res.sendFile(path.join(__dirname, "./public/index.html"));
+// });
+
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "./public/index.html"));
+// });
+
+
+
+
+
+// let uniqid = require("uniqid");
+
+
+// router.get("/api/notes", (req, res) => {
+//   console.log("GET request for notes.");
+
+//   let data = fs.readFileSync("../../db/db.json", "utf8");
+
+//   res.json(JSON.parse(data));
+// });
+
+// router.post("/api/notes", (req, res) => {
+//   console.log("POST request for new note.");
+
+  // const { title, text } = req.body;
+
+  // if (req.body) {
+  //   const newNote = {
+  //     title,
+  //     text,
+  //     note_id: uuidv4(),
+  //   }
+  // } else {
+  //   res.error("Error in adding note.")
+  // }
+
+//   const newNote = {
+//     ...req.body,
+//     id: uuidv4(),
+//   };
+
+//   let data = fs.readFileSync("../../db/db.json", "utf8");
+
+//   const dataJSON = JSON.parse(data);
+
+//   dataJSON.push(newNote);
+
+//   fs.writeFile("../../db/db.json", JSON.stringify(dataJSON), (err, text) => {
+//     if (err) {
+//       console.error(err);
+//       return;
+//     }
+//     console.log ("Check", text);
+//   });
+
+//   console.log("Successfully added a new note.");
+
+//   res.json(data);
+// });
+
+// router.delete("/api/notes/:id", (req, res) => {
+//   console.log("DELETE request to delete note.")
+
+//   let data = fs.readFileSync("../../db/db.json", "utf8");
+
+//   const dataJSON = JSON.parse(data);
+
+//   const newNotes = dataJSON.filter((note) => {
+//     return note.id !== req.params.id;
+//   });
+
+//   fs.writeFile("../../db/db.json", JSON.stringify(newNotes), (err, text) => {
+//     if (err) {
+//       console.error(err);
+//       return;
+//     }
+//   });
+
+//   res.json(newNotes);
+
+// });
+
+
+
+
+
+// const path = require("path");
+// const apiRoutes = require("/api");
+// router.route("/api").unsubscribe();
+
+// const express = require("express");
+// const router = express.Router();
+
+// const notesRouter = require("./apiRoutes");
+
+// const app = express();
+
+// app.use("/api/notes", notesRouter);
