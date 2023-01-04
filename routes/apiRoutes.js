@@ -2,6 +2,7 @@ const router = require("express").Router();
 const fs = require("fs");
 const { v4: uuidv4 } = require("uuid");
 
+// ROUTING
 router.get("/notes", (req, res) => {
   console.log("GET request for notes.");
 
