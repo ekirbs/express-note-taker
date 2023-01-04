@@ -7,9 +7,9 @@ router.get("/notes", (req, res) => {
 
   const data = fs.readFileSync("./db/db.json", "utf8");
 
-  console.log("Successfully got saved notes.");
-
   res.json(JSON.parse(data));
+  
+  console.log("Successfully got saved notes.");
 });
 
 router.post("/notes", (req, res) => {
@@ -22,12 +22,12 @@ router.post("/notes", (req, res) => {
 
   fs.writeFileSync("./db/db.json", JSON.stringify(notes));
 
-  console.log("Successfully added a new note.");
-
   res.json(notes);
+  
+  console.log("Successfully added a new note.");
 });
 
-router.delete("notes/:id", (req, res) => {
+router.delete("/notes/:id", (req, res) => {
   console.log("DELETE request to delete note.");
 
   const notes = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
@@ -37,10 +37,9 @@ router.delete("notes/:id", (req, res) => {
 
   fs.writeFileSync("./db/db.json", JSON.stringify(newNotes));
 
-  console.log("Successfully deleted a note.");
-
   res.json(newNotes);
-
+  
+  console.log("Successfully deleted a note.");
 });
 
 module.exports = router;
