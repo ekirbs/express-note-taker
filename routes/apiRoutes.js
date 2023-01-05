@@ -1,18 +1,13 @@
 const router = require("express").Router();
 const fs = require("fs");
 const { v4: uuidv4 } = require("uuid");
-// const DB = require('./../db/DB');
 
 // ROUTING
 router.get("/notes", (req, res) => {
   console.log("GET request for notes.");
-  // DB.getNotes().then(notes => {
-  //   return res.json(notes)
-  // }).catch(err => res.status(500).json(err))
 
-  const data = fs.readFile("./db/db.json", "utf8", (err, data) => {
+  fs.readFile("./db/db.json", "utf8", (err, data) => {
     if (err) throw err;
-
     console.log("Successfully got saved notes.");
     res.json(JSON.parse(data));
   });
@@ -39,7 +34,7 @@ router.delete("/notes/:id", (req, res) => {
   const newNotes = notes.filter((note) => {
     return note.id !== req.params.id;
   });
-
+    
   fs.writeFileSync("./db/db.json", JSON.stringify(newNotes));
 
   console.log("Successfully deleted a note.");
