@@ -29,7 +29,7 @@ Click on the link in the description and the Note Taker app homepage will open u
 
 Special thanks to the Web Dev Simplified Youtube channel!
 <br>
-Link: [Web Dev Simplified](https://www.youtube.com/channel/UCFbNIlppjAuEX4znoulh0Cw/ 'The Youtube channel for Web Dev Simplified.')
+Link: [Web Dev Simplified](https://www.youtube.com/@WebDevSimplified 'The Youtube channel for Web Dev Simplified.')
 
 
 ## License
